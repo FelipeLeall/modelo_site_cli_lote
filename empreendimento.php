@@ -1,5 +1,4 @@
 <?php
-
 include './conexao.php';
 
 $idempreendimento = intval($_GET['idempreendimento']);
@@ -41,11 +40,10 @@ $executa_site = mysqli_fetch_assoc($busca_site_empre);
     <link rel="stylesheet" href="lib/photoswipe/default-skin/default-skin.css">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/alt-style.css">
+    <link rel="stylesheet" href="css/navbar.css">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery-3.2.1.min.js"></script>
     <script src="lib/popper.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/selectric/jquery.selectric.js"></script>
     <script src="lib/aos/aos.js"></script>
@@ -58,17 +56,10 @@ $executa_site = mysqli_fetch_assoc($busca_site_empre);
     <script src="lib/sidr/jquery.sidr.min.js"></script>
     <script src="lib/lib.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
     <div id="main">
-        <!-- Pensar na solução para essa navbar -->
         <!-- <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
             <div class="container"> -->
         <!-- Logo NavBar -->
@@ -100,30 +91,34 @@ $executa_site = mysqli_fetch_assoc($busca_site_empre);
         </nav> -->
 
         <nav class="navbar navbar-expand-lg nav-config">
-            <!-- Logo NavBar -->
-            <a class="navbar-brand" href="index.php">
-                <span>
-                    <img class="logo-config" src="img/Modelo/meioEscuro.png" alt="">
-                </span>
-            </a>    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="filter: hue-rotate(180deg) brightness(20%) saturate(50%);"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menu-content">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php" role="button">
-                            Central de vendas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-btn" href="#">
-                            <span> Entre em Contato</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="container">
+                <!-- Logo NavBar -->
+                <a class="navbar-brand" href="index.php">
+                    <span>
+                        <img class="logo-config" src="img/Modelo/meioEscuro.png" alt="">
+                    </span>
+                </a>
+                <!-- =-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="filter: hue-rotate(180deg) brightness(20%) saturate(50%);"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-content">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item glass-nav-item">
+                            <a class="nav-link glass-nav-link" href="index.php" role="button">
+                                Central de vendas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="glass-nav-btn" href="#">
+                                <span> Entre em Contato</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
+
 
         <div class="container-fluid home-body">
             <div class="row">
@@ -157,62 +152,39 @@ $executa_site = mysqli_fetch_assoc($busca_site_empre);
                         <div class="swiper-container gallery-top" data-pswp-uid="1">
                             <div class="swiper-wrapper ">
 
-                                <div class="swiper-slide">
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/claro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/claro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
+                                <?php
+                                $cont_aux = 1;
+                                $cont_carrosel = 1;
+                                while ($cont_carrosel <= 4) :
 
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/meioClaro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/meioClaro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
-                                </div>
 
-                                <div class="swiper-slide">
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/meioEscuro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/meioEscuro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
+                                    if ($cont_aux >= 6) {
+                                        $cont_aux = 1;
+                                    }
+                                ?>
 
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/escuro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/escuro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
-                                </div>
+                                    <div class="swiper-slide">
+                                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                            <a href="img-site/empree-1/img-<?php echo $cont_aux; ?>.jpg" itemprop="contentUrl" data-size="2000x1414">
+                                                <img data-src="img-site/empree-1/img-<?php echo $cont_aux; ?>.jpg" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
+                                            </a>
+                                        </figure>
 
-                                <div class="swiper-slide">
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/claro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/claro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
+                                        <?php
+                                        $cont_aux++;
+                                        $cont_carrosel++;
+                                        ?>
 
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/meioClaro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/meioClaro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
-                                </div>
+                                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                            <a href="img-site/empree-1/img-<?php echo $cont_aux + 1; ?>.jpg" itemprop="contentUrl" data-size="2000x1414">
+                                                <img data-src="img-site/empree-1/img-<?php echo $cont_aux + 1; ?>.jpg" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
+                                            </a>
+                                        </figure>
+                                    </div>
 
-                                <div class="swiper-slide">
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/meioEscuro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/meioEscuro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
-
-                                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <a href="img/Modelo/escuro.png" itemprop="contentUrl" data-size="2000x1414">
-                                            <img data-src="img/Modelo/escuro.png" src="img/spacer.png" class="img-fluid swiper-lazy" alt="Drawing Room">
-                                        </a>
-                                    </figure>
-                                </div>
-
+                                <?php
+                                endwhile
+                                ?>
 
                             </div>
                             <div class="swiper-button-next"></div>

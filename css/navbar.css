@@ -1,0 +1,76 @@
+.nav-config {
+    float: inline-start;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    border-bottom: rgba(255, 255, 255, 0.2) solid 1px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(45px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    z-index: 1030;
+}
+
+.glass-nav-item>.glass-nav-link {
+    font-weight: bold;
+    color: #534a3f;
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 50px;
+}
+
+
+.glass-nav-item.show>.glass-nav-link,
+.glass-nav-item.show>.glass-nav-link:focus,
+.glass-nav-item.show>.glass-nav-link:hover,
+#menu .nav-item:focus>.nav-link,
+#menu .nav-item:hover>.nav-link {
+
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+
+@media (max-width: 991px) {
+    .glass-nav-item>.glass-nav-link {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+}
+
+.glass-nav-btn {
+    display: flex;
+    color: #f5f5f1;
+    font-weight: bold;
+    border: 1px soli#3d3d3d;
+    background: #3d3d3d;
+    padding: 12px 40px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.glass-nav-btn:hover {
+    background: #ababab;
+    border: 1px solid #ababab;
+    color: #3d3d3d;
+    transition: all 0.25s;
+}
